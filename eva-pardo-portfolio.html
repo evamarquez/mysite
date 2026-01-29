@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eva Pardo - Project Manager & Marketing Digital Specialist with 5+ years of experience">
+    <title>Eva Pardo | Project Manager & Marketing Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #4F46E5;
+            --primary-purple: #7C3AED;
+            --dark-bg: #0F172A;
+            --light-bg: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            padding: 80px 0;
+        }
+
+        .hero-text h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text .tagline {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .hero-text .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-photo {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--white);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .highlight-item {
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-purple);
+        }
+
+        .highlight-item h3 {
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-item p {
+            color: var(--text-light);
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 100px 0;
+            background: var(--light-bg);
+        }
+
+        .experience-grid {
+            display: grid;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .experience-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .experience-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-card .company {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .experience-card .achievements {
+            color: var(--text-dark);
+            margin-top: 15px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .skill-category {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-purple);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            color: var(--text-light);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--dark-bg);
+            color: var(--white);
+        }
+
+        .contact .section-title {
+            color: var(--white);
+        }
+
+        .contact-content {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item h3 {
+            color: var(--white);
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-cta {
+            margin-top: 40px;
+        }
+
+        .contact-cta .cta-button {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: #020617;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .tagline {
+                font-size: 1.2rem;
+            }
+
+            .profile-photo {
+                width: 280px;
+                height: 280px;
+                font-size: 6rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text .tagline {
+                font-size: 1rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .profile-photo {
+                width: 220px;
+                height: 220px;
+                font-size: 4.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Eva Pardo</h1>
+                    <p class="tagline">Project Manager & Marketing Specialist</p>
+                    <p class="subtitle">Driving growth through strategic project management, digital marketing, and AI innovation</p>
+                    <a href="#contact" class="cta-button">Let's Work Together</a>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-photo">EP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Google-certified Project Manager with 5+ years of experience driving digital transformation and growth. I specialize in combining strategic project management with cutting-edge marketing techniques and AI automation to deliver exceptional results.</p>
+                    <br>
+                    <p>As a trilingual professional fluent in Spanish, English (C1), and French (B1), I bring a global perspective to every project. My Master's in Marketing from Florida Global University, combined with hands-on experience scaling businesses from online ventures to physical storefronts, gives me a unique edge in understanding both strategy and execution.</p>
+                </div>
+                <div class="highlights">
+                    <div class="highlight-item">
+                        <h3>5+ Years Experience</h3>
+                        <p>Project Management & Digital Marketing</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Trilingual Professional</h3>
+                        <p>Spanish, English (C1), French (B1)</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Google Certified</h3>
+                        <p>Project Management Professional</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h3>Master's Degree</h3>
+                        <p>Marketing - Florida Global University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience Highlights</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Project Manager</h3>
+                    <p class="company">BattleForge PC | 2025</p>
+                    <p class="achievements">Led digital marketing initiatives that generated 2,000+ qualified leads monthly and drove $30K+ in revenue. Implemented data-driven strategies and optimized conversion funnels to maximize ROI.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Founder & CEO</h3>
+                    <p class="company">Fresha Wear</p>
+                    <p class="achievements">Successfully scaled e-commerce brand from online-only to physical retail presence, achieving 300% ROI. Managed end-to-end operations including product development, digital marketing, inventory management, and customer experience.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Project Manager & Marketing Specialist</h3>
+                    <p class="company">Pixart Creative Agency</p>
+                    <p class="achievements">Managed 12+ social media accounts across diverse industries. Developed and executed comprehensive digital marketing strategies, including content creation, community management, and performance analytics.</p>
+                </div>
+                <div class="experience-card">
+                    <h3>Creator & Instructor</h3>
+                    <p class="company">Smart Work AI</p>
+                    <p class="achievements">Developed comprehensive productivity course teaching professionals how to leverage AI tools (ChatGPT, Claude) for workflow optimization and business automation. Empowering teams to work smarter with cutting-edge technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <ul>
+                        <li>Agile Methodologies</li>
+                        <li>Scrum Framework</li>
+                        <li>Google PM Certification</li>
+                        <li>Team Leadership</li>
+                        <li>Stakeholder Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Digital Marketing</h3>
+                    <ul>
+                        <li>SEO & SEM</li>
+                        <li>Social Media Marketing</li>
+                        <li>Email Marketing</li>
+                        <li>Content Strategy</li>
+                        <li>Marketing Analytics</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & Automation</h3>
+                    <ul>
+                        <li>ChatGPT & Claude</li>
+                        <li>Workflow Automation</li>
+                        <li>Productivity Tools</li>
+                        <li>Process Optimization</li>
+                        <li>AI Integration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Business Growth</h3>
+                    <ul>
+                        <li>E-commerce Management</li>
+                        <li>Growth Marketing</li>
+                        <li>Data Analysis & Reporting</li>
+                        <li>Conversion Optimization</li>
+                        <li>Strategic Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto;">
+                    I'm currently available for full-time remote opportunities. Let's discuss how I can help drive growth for your organization.
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Location</h3>
+                        <p>South Carolina, USA</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Work Preference</h3>
+                        <p>Remote Full-Time</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Languages</h3>
+                        <p>Spanish, English, French</p>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <a href="mailto:contact@evapardo.com" class="cta-button">Let's Work Together</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Eva Pardo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
